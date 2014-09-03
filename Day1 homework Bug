@@ -17,7 +17,6 @@ ANNOTATION=dmel-all-r5.57.gff
 CORES=4
 
 for i in $(seq 24)
-#added $OUTPUT_DIR, $GENOME_DIR, $ANNOTAION to the above line
 do
   echo fastqc $FASTQ_DIR/$SAMPLE_PREFIX$i\.fastq.gz -o $OUTPUT_DIR
   echo tophat $FASTQ_DIR/$SAMPLE_PREFIX$i\.fastq.gz -o $OUTPUT_DIR
