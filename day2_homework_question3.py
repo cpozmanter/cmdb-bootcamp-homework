@@ -24,19 +24,20 @@ df6 = pd.read_table( cufflinks_output6 )
 df7 = pd.read_table( cufflinks_output7 )
 df8 = pd.read_table( cufflinks_output8 )
 
-df_all = [df1, df2, df3, df4, df5, df6, df7, df8]
+all_cuff = [cufflinks_output1, cufflinks_output2, cufflinks_output3, cufflinks_output4, cufflinks_output5, cufflinks_output6, cufflinks_output7, cufflinks_output8]
+FPKM = []  
 
-FPKM = []
-for i in df_all:
+for i in all_cuff:
     f = open (i)
     while True:
         line = f.readline()
+        fields = line.rstrip ("\r\n").split("\t") #fields refer to columns, r= the return key, n= the space key, t= tab
         if "Sxl" in line:
-            fields = line.rstrip ("\r\n").split("\t")
             FPKM.append(fields[9])
-            print "FPKM for '%s' Sxl is:" % (i), FPKM
+        if not line:
             break
+            
 plt.figure()
 plt.plot(FPKM)
-plt.savefig("FPKM_plot.png")
+plt.savefig("FPKM_plot.png") #Unable to get a plot when running the program?
 
