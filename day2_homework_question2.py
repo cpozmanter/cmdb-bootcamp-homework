@@ -20,6 +20,16 @@ df6 = pd.read_table( cufflinks_output6 )
 df7 = pd.read_table( cufflinks_output7 )
 df8 = pd.read_table( cufflinks_output8 )
 
-columns = ["FPKM", "gene_short_name"]
 
-df1, df2, df3, df4, df5, df6, df7, df8.to_csv("Sxl.csv", sep = "\t", index= False)
+df_all= df1, df2, df3, df4, df5, df6, df7, df8.to_csv("Sxl.csv", sep = "\t", index= False)
+
+for i in df_all:
+    f= open (i)
+    FPKM = []
+    while True:
+        line = f.readline()
+        if "Sxl" in line:
+            fields = line.rstrip ("\r\n").split("\t")
+            FPKM.append(fields[9])
+            print "FPKM for '%s' Sxl is:" % (i), FPKM
+            break
