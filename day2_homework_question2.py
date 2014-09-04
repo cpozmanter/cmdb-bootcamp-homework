@@ -21,7 +21,7 @@ df7 = pd.read_table( cufflinks_output7 )
 df8 = pd.read_table( cufflinks_output8 )
 
 
-df_all= df1, df2, df3, df4, df5, df6, df7, df8.to_csv("Sxl.csv", sep = "\t", index= False)
+all_cuff = [cufflinks_output1, cufflinks_output2, cufflinks_output3, cufflinks_output4, cufflinks_output5, cufflinks_output6, cufflinks_output7, cufflinks_output8]
 
 for i in df_all:
     f= open (i)
