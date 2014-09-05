@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Parse a single FASTA record from stdin and print it.
+Translate transcripts!
 """
 import sys
 
