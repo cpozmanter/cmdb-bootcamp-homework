@@ -2,6 +2,9 @@
 
 import pandas as pd 
 
+#Tried two different approuches to this code. The first one is commented out
+
+
 cufflinks_output = "/Users/cmdb/data/results/SRR072893_clout/genes.fpkm_tracking"
 
 df = pd.read_table( cufflinks_output )
